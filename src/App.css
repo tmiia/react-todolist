@@ -37,3 +37,7 @@
     transform: rotate(360deg);
   }
 }
+
+.task.ischecked{
+  background-color: green;
+}

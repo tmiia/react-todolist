@@ -13,9 +13,23 @@ function App() {
   const addTask = () =>{
     const task = {
       id: todolist.length === 0 ? 1 : todolist[todolist.length - 1].id + 1,
-      taskName: newTask
+      taskName: newTask,
+      isCheck: false
     }
     setTodolist([...todolist, task]);
+  }
+
+  const updateTask = (id) =>{
+    setTodolist(
+      todolist.map((task)=>{
+        if(task.id === id){
+          return {...task, isCheck: true};
+        }
+        else{
+          return task;
+        }
+      })
+    );
   }
 
   const deleteTask = (id) =>{
@@ -36,7 +50,7 @@ function App() {
       <div className='list'>
         {todolist.map((task)=>{
           return(
-            <Task taskName={task.taskName} id={task.id} deleteTask={deleteTask} />
+            <Task taskName={task.taskName} id={task.id} isCheck={task.isCheck} deleteTask={deleteTask} updateTask={updateTask} />
           );
         })}
       </div>
