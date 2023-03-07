@@ -1,43 +1,70 @@
-.App {
-  text-align: center;
+body{
+  margin: 0;
+  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+}
+main{
+  display: flex;
+  padding: 4rem;
+  min-height: fit-content;
+}
+.addTask{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.addTask .taskForm{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 50%;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.addTask .taskForm input{
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #F5F5F5;
+}
+.addTask .taskForm button{
+  padding: 1.5rem;
+  background: #FF9900;
+  border: none;
+  border-radius: 10px;
+}
+.list{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  flex: 1;
 }
+.task{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  min-width: 80%;
+  max-width: 80%;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
 
-.App-link {
-  color: #61dafb;
+  transition: .3s ease-in-out;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .task.ischecked{
-  background-color: green;
+  background-color: #d5dadf;
+  color: #9d9d9d;
 }

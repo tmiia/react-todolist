@@ -41,19 +41,28 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>To do List</h1>
+      <header>
+        <img src='/logo.svg' alt='logo' />
+        <div className='menu mobile'>
+          <a href='#'><img src='/icons/menu.svg' alt='menu burger' /></a>
+        </div>
+      </header>
+      <main>
+        <div className='addTask'>
+          <div className='taskForm'>
+            <input type="text" name="task" id="task" onChange={handleChange} />
+            <button onClick={addTask}>Add</button>
+          </div>
+        </div>
 
-      <div className='addTask'>
-        <input type="text" name="task" id="task" onChange={handleChange} />
-        <button onClick={addTask}>Add</button>
-      </div>
-      <div className='list'>
-        {todolist.map((task)=>{
-          return(
-            <Task taskName={task.taskName} id={task.id} isCheck={task.isCheck} deleteTask={deleteTask} updateTask={updateTask} />
-          );
-        })}
-      </div>
+        <div className='list'>
+          {todolist.map((task)=>{
+            return(
+              <Task taskName={task.taskName} id={task.id} isCheck={task.isCheck} deleteTask={deleteTask} updateTask={updateTask} />
+            );
+          })}
+        </div>
+      </main>
     </div>
   );
 }
