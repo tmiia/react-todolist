@@ -23,7 +23,8 @@ function App() {
     setTodolist(
       todolist.map((task)=>{
         if(task.id === id){
-          return {...task, isCheck: true};
+          const checkValue = task.isCheck === false ? true : false;
+          return {...task, isCheck: checkValue};
         }
         else{
           return task;
@@ -49,7 +50,7 @@ function App() {
       </header>
       <main>
         <div className='title__container'>
-          <h1>Create new task</h1>
+          <h1>Be more productive</h1>
         </div>
         <div className='todolist'>
         <div className='addTask'>
