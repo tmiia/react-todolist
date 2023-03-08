@@ -45,7 +45,7 @@ function App() {
       <header>
         <img src='/logo.svg' alt='logo' />
         <div className='menu mobile'>
-          <a href='#'><img src='/icons/menu.svg' alt='menu burger' /></a>
+          <img src='/icons/menu.svg' alt='menu burger' />
         </div>
       </header>
       <main>
