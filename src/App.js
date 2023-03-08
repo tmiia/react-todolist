@@ -19,7 +19,7 @@ function App() {
     setTodolist([...todolist, task]);
   }
 
-  const updateTask = (id) =>{
+  const checkTask = (id) =>{
     setTodolist(
       todolist.map((task)=>{
         if(task.id === id){
@@ -56,14 +56,14 @@ function App() {
         <div className='addTask'>
           <div className='taskForm'>
             <input className='task__text' type="text" name="task" id="task" onChange={handleChange} />
-            <button className='task__add-btn' onClick={addTask}><img src='/icons/add_btn.svg'/></button>
+            <button className='task__add-btn' onClick={addTask}><img src='/icons/add_btn.svg' alt='add icon'/></button>
           </div>
         </div>
 
         <div className='list'>
           {todolist.length === 0 ? <span className="task__text">Vous n'avez pas encore de tâches</span> : todolist.map((task)=>{
             return(
-              <Task taskName={task.taskName} id={task.id} isCheck={task.isCheck} deleteTask={deleteTask} updateTask={updateTask} />
+              <Task taskName={task.taskName} id={task.id} isCheck={task.isCheck} deleteTask={deleteTask} checkTask={checkTask} />
             );
           })}
         </div>
