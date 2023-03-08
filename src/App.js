@@ -48,6 +48,10 @@ function App() {
         </div>
       </header>
       <main>
+        <div className='title__container'>
+          <h1>Create new task</h1>
+        </div>
+        <div className='todolist'>
         <div className='addTask'>
           <div className='taskForm'>
             <input className='task__text' type="text" name="task" id="task" onChange={handleChange} />
@@ -61,6 +65,7 @@ function App() {
               <Task taskName={task.taskName} id={task.id} isCheck={task.isCheck} deleteTask={deleteTask} updateTask={updateTask} />
             );
           })}
+        </div>
         </div>
       </main>
     </div>
