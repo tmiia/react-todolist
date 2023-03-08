@@ -42,6 +42,7 @@ main{
   background: #FF9900;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 .list{
   display: flex;
@@ -64,12 +65,53 @@ main{
 
   transition: .3s ease-in-out;
 }
-.task button {
+.task__text{
+  font-size: 1rem;
+  color: #112033;
+  opacity: 0.8;
+}
+.task .task__action {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  transition: stroke .3s ease-in-out;
+}
+.task__action.delete path{
+  stroke: #b52727;
+}
+.task__action.check path{
+  stroke: #72d145;
+}
+.task__action.check{
+  margin-right: 1rem;
 }
 .task.ischecked{
-  background-color: #d5dadf;
-  color: #9d9d9d;
+  background-color: #f4f5f6;
+}
+.task.ischecked .task__text.label{
+  color: #c6cbd2;
+}
+.task.ischecked path{
+  stroke: #d9dcdf;
+}
+.task.ischecked .task__action.delete path{
+  stroke: #ddd4d4;
+}
+
+@media screen and (max-width: 900px) {
+  main{
+    flex-direction: column;
+  }
+  .addTask .taskForm{
+    width: 100%;
+  }
+  .list{
+    margin-top: 2rem;
+  }
+  .task{
+    min-width: calc(100% - 2rem);
+  }
+  .addTask .taskForm button{
+    padding: 0.5rem;
+  }
 }

@@ -50,13 +50,13 @@ function App() {
       <main>
         <div className='addTask'>
           <div className='taskForm'>
-            <input type="text" name="task" id="task" onChange={handleChange} />
-            <button onClick={addTask}><img src='/icons/add_btn.svg'/></button>
+            <input className='task__text' type="text" name="task" id="task" onChange={handleChange} />
+            <button className='task__add-btn' onClick={addTask}><img src='/icons/add_btn.svg'/></button>
           </div>
         </div>
 
         <div className='list'>
-          {todolist.map((task)=>{
+          {todolist.length === 0 ? <span className="task__text">Vous n'avez pas encore de tâches</span> : todolist.map((task)=>{
             return(
               <Task taskName={task.taskName} id={task.id} isCheck={task.isCheck} deleteTask={deleteTask} updateTask={updateTask} />
             );
