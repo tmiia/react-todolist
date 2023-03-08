@@ -64,6 +64,11 @@ main{
 
   transition: .3s ease-in-out;
 }
+.task button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 .task.ischecked{
   background-color: #d5dadf;
   color: #9d9d9d;

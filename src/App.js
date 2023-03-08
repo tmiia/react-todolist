@@ -51,7 +51,7 @@ function App() {
         <div className='addTask'>
           <div className='taskForm'>
             <input type="text" name="task" id="task" onChange={handleChange} />
-            <button onClick={addTask}>Add</button>
+            <button onClick={addTask}><img src='/icons/add_btn.svg'/></button>
           </div>
         </div>
 
